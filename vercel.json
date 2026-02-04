@@ -9,16 +9,8 @@
   },
   "rewrites": [
     {
-      "source": "/((?!api|_next|_vercel|.*\\.)(?:[^/]*))",
-      "destination": "/$1"
-    },
-    {
-      "source": "/productos/(.*)",
-      "destination": "/productos/$1"
-    },
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/(.*)",
+      "destination": "/"
     }
   ],
   "headers": [
