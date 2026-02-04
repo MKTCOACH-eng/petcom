@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* PETCOM Color Palette */
+    --petcom-coral: #e67e73;    /* Emoción / cercanía */
+    --petcom-yellow: #fcbd34;   /* CTA / acción */
+    --petcom-green: #1b375;     /* Bienestar */
+    --petcom-blue: #7baaf7;     /* Pagos / envíos */
+    --petcom-purple: #6a67c8;   /* IA / tecnología */
+    
+    /* Neutral colors */
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --muted: #f5f5f5;
+    --border: #e5e5e5;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  /* Smooth scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Custom gradient backgrounds */
+  .gradient-coral {
+    background: linear-gradient(135deg, var(--petcom-coral) 0%, #f39c96 100%);
+  }
+
+  .gradient-yellow {
+    background: linear-gradient(135deg, var(--petcom-yellow) 0%, #fdd56d 100%);
+  }
+
+  /* Shadow utilities */
+  .shadow-petcom {
+    box-shadow: 0 4px 20px rgba(230, 126, 115, 0.15);
+  }
+
+  .shadow-petcom-lg {
+    box-shadow: 0 10px 40px rgba(230, 126, 115, 0.2);
+  }
+
+  /* Hover transitions */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--petcom-coral);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d66e63;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Video autoplay styles */
+video {
+  @apply w-full h-full object-cover;
+}
