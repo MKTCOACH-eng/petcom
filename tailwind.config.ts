@@ -12,11 +12,11 @@ const config: Config = {
     extend: {
       colors: {
         petcom: {
-          coral: '#e67e73',      // Emoción / cercanía
-          yellow: '#fcbd34',     // CTA / acción
-          green: '#1b375',       // Bienestar
+          coral: '#e67c73',      // Emoción / cercanía
+          yellow: '#f7cb4d',     // CTA / acción
+          green: '#41b375',      // Bienestar
           blue: '#7baaf7',       // Pagos / envíos
-          purple: '#6a67c8',     // IA / tecnología
+          purple: '#ba67c8',     // IA / tecnología
         },
       },
       fontFamily: {

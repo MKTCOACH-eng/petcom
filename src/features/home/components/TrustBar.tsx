@@ -1,23 +1,23 @@
 'use client';
 
-import { Shield, Truck, Award } from 'lucide-react';
+import { Shield, Truck, Package } from 'lucide-react';
 
 export default function TrustBar() {
   const features = [
     {
       icon: Shield,
-      title: 'Pago Seguro',
-      description: '100% protegido',
+      title: 'Pagos seguros',
+      description: 'Stripe · PayPal',
     },
     {
       icon: Truck,
-      title: 'Envío Gratis',
-      description: 'En pedidos +$500',
+      title: 'Entregamos a todo México y Latinoamérica',
+      description: 'Cobertura nacional e internacional',
     },
     {
-      icon: Award,
-      title: 'Garantía Total',
-      description: 'Satisfacción garantizada',
+      icon: Package,
+      title: 'Logística rastreable',
+      description: 'Sigue tu pedido en tiempo real',
     },
   ];
 

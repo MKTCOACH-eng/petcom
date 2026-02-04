@@ -5,15 +5,16 @@ import Button from '@/shared/components/Button';
 import { Heart } from 'lucide-react';
 
 export default function HeroVideo() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  // El video está temporalmente deshabilitado, así que marcamos como cargado
+  const [isVideoLoaded, setIsVideoLoaded] = useState(true);
 
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        {/* Placeholder image while video loads */}
+        {/* Background image with gradient overlay */}
         <div 
-          className={`absolute inset-0 bg-gradient-to-br from-petcom-coral/20 to-petcom-yellow/20 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
+          className="absolute inset-0 bg-gradient-to-br from-petcom-coral/20 to-petcom-yellow/20"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1920&q=80)',
             backgroundSize: 'cover',
@@ -21,18 +22,18 @@ export default function HeroVideo() {
           }}
         />
         
-        {/* Video for desktop */}
-        <video
+        {/* Video for desktop - temporalmente deshabilitado por error de carga */}
+        {/* <video
           autoPlay
           loop
           muted
           playsInline
           onLoadedData={() => setIsVideoLoaded(true)}
+          onError={() => console.log('Error loading video')}
           className="hidden md:block w-full h-full object-cover"
         >
-          {/* Placeholder - usuario debe reemplazar con video real */}
-          <source src="/videos/hero-pets.mp4" type="video/mp4" />
-        </video>
+          <source src="https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/Hero_video/202602040234.mp4" type="video/mp4" />
+        </video> */}
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
@@ -47,24 +48,25 @@ export default function HeroVideo() {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance leading-tight">
-            Todo para el bienestar de{' '}
-            <span className="text-petcom-yellow">tu mejor amigo</span>
+            Todo para tu mascota.
+            <br />
+            <span className="text-petcom-yellow">Ahora con inteligencia.</span>
           </h1>
           
           <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto text-balance">
-            Productos premium, envío gratis y la mejor experiencia para el cuidado de tu mascota
+            Productos, servicios y recomendaciones pensadas para su bienestar.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg hover:scale-105 transition-transform">
-              Explorar productos
+            <Button size="lg" className="text-lg hover:scale-105 transition-transform bg-petcom-yellow text-white hover:bg-yellow-500">
+              Suscríbete
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="text-lg bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-petcom-coral"
             >
-              Más información
+              Explorar la tienda
             </Button>
           </div>
         </div>
