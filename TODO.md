@@ -10,11 +10,11 @@
 | Fase | Estado | Progreso | Tiempo Estimado |
 |------|--------|----------|-----------------|
 | **FASE 1A: Landing** | ✅ COMPLETO | 100% | LISTO |
-| **FASE 1B: E-commerce Básico** | 🔄 EN PROGRESO | 0% | 4-6 semanas |
+| **FASE 1B: E-commerce Básico** | 🔄 EN PROGRESO | 23% | 4-6 semanas |
 | **FASE 1C: Diferenciadores PETCOM** | ⏳ PENDIENTE | 0% | 6-8 semanas |
 | **FASE 1D: Ecosistema** | ⏳ PENDIENTE | 0% | 4-6 semanas |
 
-**Progreso Total:** 11/188 items (5.8%)
+**Progreso Total:** 36/252 items (14.3%)
 
 ---
 
@@ -40,64 +40,64 @@
 
 **Objetivo:** Generar revenue vendiendo productos sin personalización
 
-## SEMANA 1-2: Fundaciones (40h) - 0/25
+## SEMANA 1-2: Fundaciones (40h) - 25/25 ✅
 
-### 1. Header & Navegación (16h) - 0/12
+### 1. Header & Navegación (16h) - 12/12 ✅
 
 #### Header Principal
-- [ ] Crear `src/features/layout/components/Header.tsx`
-- [ ] Logo PETCOM (SVG o imagen)
-- [ ] Navegación principal sticky
-- [ ] Estado scroll (cambio de fondo)
-- [ ] Responsive (desktop/mobile)
+- [x] Crear `src/features/layout/components/Header.tsx`
+- [x] Logo PETCOM (SVG o imagen)
+- [x] Navegación principal sticky
+- [x] Estado scroll (cambio de fondo)
+- [x] Responsive (desktop/mobile)
 
 #### Menú de Navegación
-- [ ] Dropdown "Perros" con subcategorías básicas
-  - [ ] Alimento
-  - [ ] Juguetes
-  - [ ] Accesorios
-- [ ] Dropdown "Gatos" con subcategorías básicas
-  - [ ] Alimento
-  - [ ] Arena
-  - [ ] Juguetes
-- [ ] Link "Servicios" (placeholder)
-- [ ] Buscador global (input con icono)
+- [x] Dropdown "Perros" con subcategorías básicas
+  - [x] Alimento
+  - [x] Juguetes
+  - [x] Accesorios
+- [x] Dropdown "Gatos" con subcategorías básicas
+  - [x] Alimento
+  - [x] Arena
+  - [x] Juguetes
+- [x] Link "Servicios" (placeholder)
+- [x] Buscador global (input con icono)
 
 #### Iconos de Usuario
-- [ ] Botón "Login" (modal placeholder)
-- [ ] Icono de carrito con contador
-- [ ] Icono de usuario (dropdown futuro)
+- [x] Botón "Login" (modal placeholder)
+- [x] Icono de carrito con contador
+- [x] Icono de usuario (dropdown futuro)
 
-### 2. Sistema de Productos - Base de Datos (16h) - 0/8
+### 2. Sistema de Productos - Base de Datos (16h) - 8/8 ✅
 
 #### Schema Supabase
-- [ ] Crear migration `002_products_schema.sql`
-- [ ] Tabla `products`
+- [x] Crear migration `002_products_schema.sql`
+- [x] Tabla `products`
   - id, name, description, price, category, species
   - image_url, images (array), stock
   - created_at, updated_at
-- [ ] Tabla `categories`
+- [x] Tabla `categories`
   - id, name, slug, species, parent_id
   - description, image_url
-- [ ] Tabla `product_images`
+- [x] Tabla `product_images`
   - id, product_id, url, alt, order
-- [ ] Índices optimizados
-- [ ] RLS (Row Level Security) policies
-- [ ] Seed data (10-20 productos ejemplo)
+- [x] Índices optimizados
+- [x] RLS (Row Level Security) policies
+- [x] Seed data (10 productos ejemplo)
 
 #### Tipos TypeScript
-- [ ] `src/shared/types/product.ts`
-- [ ] `src/shared/types/category.ts`
+- [x] `src/shared/types/database.ts`
+- [x] ProductService con métodos CRUD
 
-### 3. Páginas de Categoría (8h) - 0/5
+### 3. Páginas de Categoría (8h) - 5/5 ✅
 
 #### Listing Page
-- [ ] `src/app/productos/[category]/page.tsx`
-- [ ] Grid de productos (4 columnas desktop, 2 móvil)
-- [ ] Card de producto (imagen, nombre, precio)
-- [ ] Paginación básica (20 productos por página)
-- [ ] Loading state
-- [ ] Empty state
+- [x] `src/app/productos/[species]/[category]/page.tsx`
+- [x] Grid de productos (4 columnas desktop, 2 móvil)
+- [x] Card de producto (imagen, nombre, precio, badges)
+- [x] Paginación básica (20 productos por página)
+- [x] Empty state
+- [x] Sorting options
 
 ---
 
