@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/features/layout/components";
@@ -56,7 +56,13 @@ export const metadata: Metadata = {
       },
     ],
   },
-  themeColor: "#FFC107",
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FFC107" },
+    { media: "(prefers-color-scheme: dark)", color: "#FFC107" },
+  ],
 };
 
 export default function RootLayout({
