@@ -5,8 +5,8 @@ import Button from '@/shared/components/Button';
 import { Heart } from 'lucide-react';
 
 export default function HeroVideo() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isVideoError, setIsVideoError] = useState(false);
 
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
@@ -14,12 +14,16 @@ export default function HeroVideo() {
       <div className="absolute inset-0">
         <div
           className={`absolute inset-0 bg-gradient-to-br from-petcom-coral/20 to-petcom-yellow/20`}
-          style={{
-            backgroundImage:
-              'url(https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/petcom-images/WhatsApp%20Image%202026-02-04%20at%2021.28.59.jpeg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+          style={
+            isVideoError
+              ? {
+                  backgroundImage:
+                    'url(https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/petcom-images/WhatsApp%20Image%202026-02-04%20at%2021.28.59.jpeg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }
+              : undefined
+          }
         />
 
         <video
@@ -30,13 +34,17 @@ export default function HeroVideo() {
           playsInline
           preload="metadata"
           crossOrigin="anonymous"
-          onLoadedData={() => setIsVideoLoaded(true)}
-          onCanPlay={() => setIsVideoReady(true)}
-          onError={() => setIsVideoLoaded(false)}
+          onCanPlay={() => {
+            setIsVideoReady(true);
+            setIsVideoError(false);
+          }}
+          onError={() => {
+            setIsVideoError(true);
+            setIsVideoReady(false);
+          }}
           className={`hidden md:block w-full h-full object-cover transition-opacity duration-700 ${
             isVideoReady ? 'opacity-100' : 'opacity-0'
           }`}
-          poster="https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/petcom-images/WhatsApp%20Image%202026-02-04%20at%2021.28.59.jpeg"
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
