@@ -10,7 +10,7 @@ export default function HeroVideo() {
   const [isVideoError, setIsVideoError] = useState(false);
   const logoSrc =
     process.env.NEXT_PUBLIC_LOGO_URL ||
-    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Logo%20a%20blanco%20PNG.jpeg';
+    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/logo%20blanco.png';
 
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
