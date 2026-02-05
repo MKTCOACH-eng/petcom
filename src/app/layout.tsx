@@ -19,6 +19,22 @@ export const metadata: Metadata = {
         url:
           process.env.NEXT_PUBLIC_FAVICON_URL ||
           "https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url:
+          process.env.NEXT_PUBLIC_FAVICON_URL ||
+          "https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+    ],
+    shortcut: [
+      {
+        url:
+          process.env.NEXT_PUBLIC_FAVICON_URL ||
+          "https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png",
       },
     ],
   },

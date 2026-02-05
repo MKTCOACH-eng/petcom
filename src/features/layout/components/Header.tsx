@@ -34,18 +34,15 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link href="/" className="flex items-center group">
             <Image
               src={logoSrc}
               alt="PETCOM"
-              width={40}
-              height={40}
+              width={64}
+              height={64}
               className="rounded-xl object-contain"
               priority
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-petcom-coral to-petcom-yellow bg-clip-text text-transparent">
-              PETCOM
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
