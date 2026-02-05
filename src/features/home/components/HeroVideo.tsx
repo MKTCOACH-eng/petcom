@@ -61,8 +61,8 @@ export default function HeroVideo() {
             <Image
               src={logoSrc}
               alt="PETCOM"
-              width={240}
-              height={80}
+              width={288}
+              height={96}
               className="mx-auto object-contain drop-shadow-md"
               priority
             />

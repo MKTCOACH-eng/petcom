@@ -10,9 +10,6 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartItemsCount, setCartItemsCount] = useState(0);
-  const logoSrc =
-    process.env.NEXT_PUBLIC_LOGO_URL ||
-    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/petcom.png';
   const faviconSrc =
     process.env.NEXT_PUBLIC_FAVICON_URL ||
     'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png';
@@ -36,19 +33,11 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Branding: Favicon grande + Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          {/* Branding: solo Favicon grande */}
+          <Link href="/" className="flex items-center group">
             <Image
               src={faviconSrc}
               alt="Icon"
-              width={80}
-              height={80}
-              className="object-contain w-16 h-16 lg:w-20 lg:h-20"
-              priority
-            />
-            <Image
-              src={logoSrc}
-              alt="PETCOM"
               width={80}
               height={80}
               className="object-contain w-16 h-16 lg:w-20 lg:h-20"
