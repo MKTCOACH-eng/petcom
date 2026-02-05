@@ -4,6 +4,8 @@ import CategoryShowcase from '@/features/home/components/CategoryShowcase';
 import FeaturedProducts from '@/features/home/components/FeaturedProducts';
 import RecommendedToday from '@/features/home/components/RecommendedToday';
 import PetcomScore from '@/features/home/components/PetcomScore';
+import GuidesSection from '@/features/home/components/GuidesSection';
+import RealStories from '@/features/home/components/RealStories';
 import ShippingLogos from '@/features/home/components/ShippingLogos';
 import EmailSubscription from '@/features/home/components/EmailSubscription';
 import ChatbotWidget from '@/features/chatbot/components/ChatbotWidget';
@@ -28,6 +30,12 @@ export default function Home() {
 
       {/* Recommended Today */}
       <RecommendedToday />
+
+      {/* Guides Section */}
+      <GuidesSection />
+
+      {/* Real Stories */}
+      <RealStories />
       
       {/* Shipping Companies Logos */}
       <ShippingLogos />
