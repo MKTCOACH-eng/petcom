@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ShoppingCart, User, Search, Menu, X } from 'lucide-react';
 import { Navigation } from './Navigation';
@@ -30,10 +31,21 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-petcom-coral to-petcom-yellow rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-xl">P</span>
-            </div>
+          <Link href="/" className="flex items-center space-x-3 group">
+            {process.env.NEXT_PUBLIC_LOGO_URL ? (
+              <Image
+                src={process.env.NEXT_PUBLIC_LOGO_URL}
+                alt="PETCOM"
+                width={40}
+                height={40}
+                className="rounded-xl object-contain"
+                priority
+              />
+            ) : (
+              <div className="w-10 h-10 bg-gradient-to-br from-petcom-coral to-petcom-yellow rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                <span className="text-white font-bold text-xl">P</span>
+              </div>
+            )}
             <span className="text-2xl font-bold bg-gradient-to-r from-petcom-coral to-petcom-yellow bg-clip-text text-transparent">
               PETCOM
             </span>

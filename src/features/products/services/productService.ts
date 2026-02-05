@@ -1,4 +1,4 @@
-import { supabase } from '@/shared/lib/supabase';
+import { getSupabase } from '@/shared/lib/supabase';
 import type {
   Product,
   ProductWithCategory,
@@ -35,6 +35,7 @@ export class ProductService {
       sortOrder = 'desc',
     } = pagination;
 
+    const supabase = getSupabase();
     let query = supabase
       .from('products_with_category')
       .select('*', { count: 'exact' });
@@ -108,6 +109,7 @@ export class ProductService {
    * Get a single product by slug
    */
   static async getProductBySlug(slug: string): Promise<ProductWithCategory | null> {
+    const supabase = getSupabase();
     const { data, error } = await supabase
       .from('products_with_category')
       .select('*')
@@ -130,6 +132,7 @@ export class ProductService {
    * Get featured products
    */
   static async getFeaturedProducts(limit = 8): Promise<Product[]> {
+    const supabase = getSupabase();
     const { data, error } = await supabase
       .from('featured_products')
       .select('*')
@@ -184,6 +187,7 @@ export class ProductService {
     limit = 4
   ): Promise<Product[]> {
     // First get the product
+    const supabase = getSupabase();
     const { data: product } = await supabase
       .from('products')
       .select('category_id, species')
@@ -221,6 +225,7 @@ export class ProductService {
    * Create a new product (admin only)
    */
   static async createProduct(productData: CreateProductDTO): Promise<Product> {
+    const supabase = getSupabase();
     const { data, error } = await supabase
       .from('products')
       .insert(productData)
@@ -241,6 +246,7 @@ export class ProductService {
   static async updateProduct(productData: UpdateProductDTO): Promise<Product> {
     const { id, ...updates } = productData;
 
+    const supabase = getSupabase();
     const { data, error } = await supabase
       .from('products')
       .update(updates)
@@ -260,6 +266,7 @@ export class ProductService {
    * Delete a product (soft delete - set is_active to false)
    */
   static async deleteProduct(productId: string): Promise<void> {
+    const supabase = getSupabase();
     const { error } = await supabase
       .from('products')
       .update({ is_active: false })

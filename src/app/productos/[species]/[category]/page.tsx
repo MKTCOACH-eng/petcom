@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { ProductGrid } from '@/features/products/components';
 import { ProductService } from '@/features/products/services/productService';
 
+export const dynamic = 'force-dynamic';
+
 interface CategoryPageProps {
   params: {
     species: string;
@@ -14,17 +16,7 @@ interface CategoryPageProps {
   };
 }
 
-// Generate static params for common routes
-export async function generateStaticParams() {
-  const commonRoutes = [
-    { species: 'perros', category: 'alimento-seco' },
-    { species: 'perros', category: 'juguetes' },
-    { species: 'gatos', category: 'alimento-seco-gatos' },
-    { species: 'gatos', category: 'arena-higiene' },
-  ];
-
-  return commonRoutes;
-}
+//
 
 // Generate metadata
 export async function generateMetadata(

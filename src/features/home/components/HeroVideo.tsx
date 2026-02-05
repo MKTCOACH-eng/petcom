@@ -1,41 +1,44 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Button from '@/shared/components/Button';
 import { Heart } from 'lucide-react';
 
 export default function HeroVideo() {
-  // El video está temporalmente deshabilitado, así que marcamos como cargado
-  const [isVideoLoaded, setIsVideoLoaded] = useState(true);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isVideoReady, setIsVideoReady] = useState(false);
 
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        {/* Background image with gradient overlay */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-petcom-coral/20 to-petcom-yellow/20"
+        <div
+          className={`absolute inset-0 bg-gradient-to-br from-petcom-coral/20 to-petcom-yellow/20`}
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1920&q=80)',
+            backgroundImage:
+              'url(https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/petcom-images/WhatsApp%20Image%202026-02-04%20at%2021.28.59.jpeg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
-        
-        {/* Video for desktop - temporalmente deshabilitado por error de carga */}
-        {/* <video
+
+        <video
+          src="https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/Hero_video/202602040234.mp4"
           autoPlay
           loop
           muted
           playsInline
+          preload="metadata"
+          crossOrigin="anonymous"
           onLoadedData={() => setIsVideoLoaded(true)}
-          onError={() => console.log('Error loading video')}
-          className="hidden md:block w-full h-full object-cover"
-        >
-          <source src="https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/Hero_video/202602040234.mp4" type="video/mp4" />
-        </video> */}
-        
-        {/* Overlay */}
+          onCanPlay={() => setIsVideoReady(true)}
+          onError={() => setIsVideoLoaded(false)}
+          className={`hidden md:block w-full h-full object-cover transition-opacity duration-700 ${
+            isVideoReady ? 'opacity-100' : 'opacity-0'
+          }`}
+          poster="https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/petcom-images/WhatsApp%20Image%202026-02-04%20at%2021.28.59.jpeg"
+        />
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/40" />
       </div>
 

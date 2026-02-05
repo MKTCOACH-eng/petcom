@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { z } from 'zod';
 import Button from '@/shared/components/Button';
 import Input from '@/shared/components/Input';
-import { supabase } from '@/shared/lib/supabase';
+import { getSupabase } from '@/shared/lib/supabase';
 import { Mail, CheckCircle } from 'lucide-react';
 
 const emailSchema = z.object({
@@ -27,6 +27,7 @@ export default function EmailSubscription() {
       emailSchema.parse({ email });
 
       // Save to Supabase (tabla: email_subscriptions)
+      const supabase = getSupabase();
       const { error: supabaseError } = await supabase
         .from('email_subscriptions')
         .insert([{ email, created_at: new Date().toISOString() }]);
