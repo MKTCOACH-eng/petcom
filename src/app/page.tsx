@@ -1,5 +1,6 @@
 import HeroVideo from '@/features/home/components/HeroVideo';
 import TrustBar from '@/features/home/components/TrustBar';
+import CategoryShowcase from '@/features/home/components/CategoryShowcase';
 import ShippingLogos from '@/features/home/components/ShippingLogos';
 import EmailSubscription from '@/features/home/components/EmailSubscription';
 import ChatbotWidget from '@/features/chatbot/components/ChatbotWidget';
@@ -12,6 +13,9 @@ export default function Home() {
       
       {/* Trust Bar - Sticky */}
       <TrustBar />
+      
+      {/* Category Showcase - Visual Tiles */}
+      <CategoryShowcase />
       
       {/* Shipping Companies Logos */}
       <ShippingLogos />

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
           "data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>\
 <rect width='64' height='64' rx='12' fill='%23FFC107'/>\
-<text x='50%' y='55%' text-anchor='middle' font-family='Inter,Arial' font-size='38' fill='%23FFFFFF' font-weight='700'>P</text>\
+<image href='https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png' x='8' y='8' width='48' height='48'/>\
 </svg>",
         type: "image/svg+xml",
       },

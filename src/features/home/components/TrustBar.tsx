@@ -6,18 +6,18 @@ export default function TrustBar() {
   const features = [
     {
       icon: Shield,
-      title: 'Pagos seguros',
+      title: 'Pago seguro',
       description: 'Stripe · PayPal',
     },
     {
       icon: Truck,
-      title: 'Entregamos a todo México y Latinoamérica',
-      description: 'Cobertura nacional e internacional',
+      title: 'Envíos rápidos y confiables',
+      description: 'Cobertura México y LATAM',
     },
     {
       icon: Package,
-      title: 'Logística rastreable',
-      description: 'Sigue tu pedido en tiempo real',
+      title: 'Tracking en tiempo real',
+      description: 'Logística rastreable',
     },
   ];
 
