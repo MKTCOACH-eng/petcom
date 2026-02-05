@@ -13,6 +13,9 @@ export function Header() {
   const logoSrc =
     process.env.NEXT_PUBLIC_LOGO_URL ||
     'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/petcom.png';
+  const faviconSrc =
+    process.env.NEXT_PUBLIC_FAVICON_URL ||
+    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,14 +36,22 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          {/* Branding: Favicon grande + Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <Image
+              src={faviconSrc}
+              alt="Icon"
+              width={80}
+              height={80}
+              className="object-contain w-16 h-16 lg:w-20 lg:h-20"
+              priority
+            />
             <Image
               src={logoSrc}
               alt="PETCOM"
-              width={64}
-              height={64}
-              className="rounded-xl object-contain"
+              width={80}
+              height={80}
+              className="object-contain w-16 h-16 lg:w-20 lg:h-20"
               priority
             />
           </Link>

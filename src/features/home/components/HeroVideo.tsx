@@ -1,12 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Button from '@/shared/components/Button';
 import { Heart } from 'lucide-react';
 
 export default function HeroVideo() {
   const [isVideoReady, setIsVideoReady] = useState(false);
   const [isVideoError, setIsVideoError] = useState(false);
+  const logoSrc =
+    process.env.NEXT_PUBLIC_LOGO_URL ||
+    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/petcom.png';
 
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
@@ -53,9 +57,15 @@ export default function HeroVideo() {
       {/* Content */}
       <div className="relative h-full flex items-center justify-center px-4">
         <div className="text-center max-w-4xl mx-auto animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-slide-in">
-            <Heart className="w-5 h-5 text-petcom-coral fill-petcom-coral" />
-            <span className="text-white text-sm font-medium">Pet Store Premium</span>
+          <div className="mb-6 animate-slide-in">
+            <Image
+              src={logoSrc}
+              alt="PETCOM"
+              width={240}
+              height={80}
+              className="mx-auto object-contain drop-shadow-md"
+              priority
+            />
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance leading-tight">
