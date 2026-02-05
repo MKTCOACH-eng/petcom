@@ -10,7 +10,7 @@ export default function HeroVideo() {
   const [isVideoError, setIsVideoError] = useState(false);
   const logoSrc =
     process.env.NEXT_PUBLIC_LOGO_URL ||
-    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/petcom.png';
+    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Logo%20BCO.png';
 
   return (
     <section className="relative h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-hidden">
@@ -63,7 +63,7 @@ export default function HeroVideo() {
               alt="PETCOM"
               width={288}
               height={96}
-              className="mx-auto object-contain drop-shadow-md"
+              className="mx-auto object-contain drop-shadow-md lg:scale-[1.2]"
               priority
             />
           </div>
