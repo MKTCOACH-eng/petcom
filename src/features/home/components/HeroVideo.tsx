@@ -69,13 +69,13 @@ export default function HeroVideo() {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 text-balance leading-tight">
-            Bienestar personalizado para tu mascota.
+            Bienestar personalizado.
             <br />
-            <span className="text-petcom-yellow">Selección curada con datos y expertos.</span>
+            <span className="text-petcom-yellow">Curado por expertos y datos.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto text-balance">
-            Una tienda que entiende a tu mascota y te recomienda lo mejor para su etapa, tamaño y estilo de vida.
+          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-xl mx-auto text-balance">
+            Recomendaciones a medida para cada etapa y tamaño.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

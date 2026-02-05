@@ -6,6 +6,7 @@ import RecommendedToday from '@/features/home/components/RecommendedToday';
 import PetcomScore from '@/features/home/components/PetcomScore';
 import GuidesSection from '@/features/home/components/GuidesSection';
 import RealStories from '@/features/home/components/RealStories';
+import { Suspense } from 'react';
 import ShippingLogos from '@/features/home/components/ShippingLogos';
 import EmailSubscription from '@/features/home/components/EmailSubscription';
 import ChatbotWidget from '@/features/chatbot/components/ChatbotWidget';
@@ -20,22 +21,32 @@ export default function Home() {
       <TrustBar />
       
       {/* Category Showcase - Visual Tiles */}
-      <CategoryShowcase />
+      <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-12 text-gray-600">Cargando categorías…</div>}>
+        <CategoryShowcase />
+      </Suspense>
 
       {/* Petcom Score - Diferencial */}
       <PetcomScore />
 
       {/* Featured Products */}
-      <FeaturedProducts />
+      <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-12 text-gray-600">Cargando productos…</div>}>
+        <FeaturedProducts />
+      </Suspense>
 
       {/* Recommended Today */}
-      <RecommendedToday />
+      <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-12 text-gray-600">Cargando recomendaciones…</div>}>
+        <RecommendedToday />
+      </Suspense>
 
       {/* Guides Section */}
-      <GuidesSection />
+      <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-12 text-gray-600">Cargando guías…</div>}>
+        <GuidesSection />
+      </Suspense>
 
       {/* Real Stories */}
-      <RealStories />
+      <Suspense fallback={<div className="max-w-7xl mx-auto px-4 py-12 text-gray-600">Cargando historias…</div>}>
+        <RealStories />
+      </Suspense>
       
       {/* Shipping Companies Logos */}
       <ShippingLogos />
