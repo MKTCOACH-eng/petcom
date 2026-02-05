@@ -15,6 +15,19 @@ type CategoryItem = {
 export default function CategoryShowcase() {
   const [items, setItems] = useState<CategoryItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const iconsBucket = process.env.NEXT_PUBLIC_CATEGORY_ICONS_BUCKET || 'ICONOS';
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+
+  const iconUrlFor = (cat: CategoryItem) => {
+    if (cat.image_url) return cat.image_url;
+    const base = `${supabaseUrl}/storage/v1/object/public/${iconsBucket}`;
+    const candidates = [
+      `${base}/categories/${cat.species}/${cat.slug}.png`,
+      `${base}/${cat.species}/${cat.slug}.png`,
+      `${base}/${cat.slug}.png`,
+    ];
+    return candidates[0];
+  };
 
   useEffect(() => {
     const run = async () => {
@@ -54,16 +67,12 @@ export default function CategoryShowcase() {
               className="group relative overflow-hidden rounded-2xl border bg-white"
             >
               <div className="aspect-[4/5] w-full">
-                {cat.image_url ? (
-                  <Image
-                    src={cat.image_url}
-                    alt={cat.name}
-                    fill
-                    className="object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-gray-100" />
-                )}
+                <Image
+                  src={iconUrlFor(cat)}
+                  alt={cat.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
