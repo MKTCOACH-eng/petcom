@@ -5,18 +5,15 @@
       "src": "package.json",
       "use": "@vercel/next",
       "config": {
-        "outputDirectory": ".next"
+        "outputDirectory": ".next",
+        "distDir": ".next"
       }
     }
   ],
   "routes": [
     {
-      "src": "/_next/static/(.*)",
-      "dest": "/_next/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/server/app/index.html"
     }
   ],
   "env": {
