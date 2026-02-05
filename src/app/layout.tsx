@@ -13,9 +13,15 @@ export const metadata: Metadata = {
   title: "PETCOM - Todo para el bienestar de tu mejor amigo",
   description: "Infraestructura digital para el cuidado de mascotas. Pet store premium con productos de calidad.",
   keywords: ["mascotas", "pet store", "cuidado de mascotas", "productos para mascotas"],
-  icons: process.env.NEXT_PUBLIC_FAVICON_URL
-    ? { icon: [{ url: process.env.NEXT_PUBLIC_FAVICON_URL }] }
-    : undefined,
+  icons: {
+    icon: [
+      {
+        url:
+          process.env.NEXT_PUBLIC_FAVICON_URL ||
+          "https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/Favicon.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

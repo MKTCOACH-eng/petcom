@@ -10,6 +10,9 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartItemsCount, setCartItemsCount] = useState(0);
+  const logoSrc =
+    process.env.NEXT_PUBLIC_LOGO_URL ||
+    'https://yxdamvwvnbkukcyzcemx.supabase.co/storage/v1/object/public/LOGO/petcom.png';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,20 +35,14 @@ export function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            {process.env.NEXT_PUBLIC_LOGO_URL ? (
-              <Image
-                src={process.env.NEXT_PUBLIC_LOGO_URL}
-                alt="PETCOM"
-                width={40}
-                height={40}
-                className="rounded-xl object-contain"
-                priority
-              />
-            ) : (
-              <div className="w-10 h-10 bg-gradient-to-br from-petcom-coral to-petcom-yellow rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-xl">P</span>
-              </div>
-            )}
+            <Image
+              src={logoSrc}
+              alt="PETCOM"
+              width={40}
+              height={40}
+              className="rounded-xl object-contain"
+              priority
+            />
             <span className="text-2xl font-bold bg-gradient-to-r from-petcom-coral to-petcom-yellow bg-clip-text text-transparent">
               PETCOM
             </span>
