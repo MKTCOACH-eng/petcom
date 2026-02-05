@@ -1,6 +1,9 @@
 import HeroVideo from '@/features/home/components/HeroVideo';
 import TrustBar from '@/features/home/components/TrustBar';
 import CategoryShowcase from '@/features/home/components/CategoryShowcase';
+import FeaturedProducts from '@/features/home/components/FeaturedProducts';
+import RecommendedToday from '@/features/home/components/RecommendedToday';
+import PetcomScore from '@/features/home/components/PetcomScore';
 import ShippingLogos from '@/features/home/components/ShippingLogos';
 import EmailSubscription from '@/features/home/components/EmailSubscription';
 import ChatbotWidget from '@/features/chatbot/components/ChatbotWidget';
@@ -16,6 +19,15 @@ export default function Home() {
       
       {/* Category Showcase - Visual Tiles */}
       <CategoryShowcase />
+
+      {/* Petcom Score - Diferencial */}
+      <PetcomScore />
+
+      {/* Featured Products */}
+      <FeaturedProducts />
+
+      {/* Recommended Today */}
+      <RecommendedToday />
       
       {/* Shipping Companies Logos */}
       <ShippingLogos />
