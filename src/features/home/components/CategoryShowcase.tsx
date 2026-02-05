@@ -18,9 +18,35 @@ export default function CategoryShowcase() {
   const iconsBucket = process.env.NEXT_PUBLIC_CATEGORY_ICONS_BUCKET || 'ICONOS';
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
+  const base = `${supabaseUrl}/storage/v1/object/public/${iconsBucket}`;
+  const slugIconMap: Record<string, string> = {
+    'alimento-seco': `${base}/categories/alimento-seco.png`,
+    'alimento-humedo': `${base}/categories/alimento-humedo.png`,
+    'dietas-especiales': `${base}/categories/dietas-especiales.png`,
+    'premios-snacks': `${base}/categories/premios-snacks.png`,
+    'suplementos': `${base}/categories/suplementos.png`,
+    'higiene-cuidado': `${base}/categories/higiene-cuidado.png`,
+    'arena-higiene': `${base}/categories/arena-higiene.png`,
+    'rascadores': `${base}/categories/rascadores.png`,
+    'juguetes': `${base}/categories/juguetes.png`,
+    'camas': `${base}/categories/camas.png`,
+    'camas-descanso': `${base}/categories/camas-descanso.png`,
+    'accesorios': `${base}/categories/accesorios.png`,
+    'transportadoras': `${base}/categories/transportadoras.png`,
+    'acuarios': `${base}/categories/acuarios.png`,
+    'filtros': `${base}/categories/filtros.png`,
+    'decoracion': `${base}/categories/decoracion.png`,
+    'cuidado-agua': `${base}/categories/cuidado-agua.png`,
+    'alimento': `${base}/categories/alimento.png`,
+    // variantes por especie
+    'alimento-seco-gatos': `${base}/categories/alimento-seco.png`,
+    'alimento-humedo-gatos': `${base}/categories/alimento-humedo.png`,
+    'juguetes-gatos': `${base}/categories/juguetes.png`,
+  };
+
   const iconUrlFor = (cat: CategoryItem) => {
     if (cat.image_url) return cat.image_url;
-    const base = `${supabaseUrl}/storage/v1/object/public/${iconsBucket}`;
+    if (slugIconMap[cat.slug]) return slugIconMap[cat.slug];
     const candidates = [
       `${base}/categories/${cat.species}/${cat.slug}.png`,
       `${base}/${cat.species}/${cat.slug}.png`,
